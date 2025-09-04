@@ -1,11 +1,16 @@
 '''
-Este script recebe um arquivo csv consolidado do relatório de Cidadãos vinculados do e-SUS APS
+Este script recebe um arquivo csv consolidado que foi gerado no arquivo [consolidar_arquivos_csv.py]
+ou um relatório de Cidadãos vinculados do e-SUS APS diretamente
 e faz a extração de registros duplicados com base nas colunas Nome e Data de nascimento.
 '''
 import pandas as pd
 
-# Carregar base de dados
+
+##Carregar base de dados
+# Use essa linha para utilizar o .csv gerado do arquivo [consolidar_arquivos_csv.py]
 #df = pd.read_csv('dados_unificados.csv', sep=';', encoding='utf8')
+
+# Use essa linha para utilizar o relatório do e_SUS APA diretamente
 df = pd.read_csv('dados/sede1.csv', sep=';', encoding='latin1', skiprows=17)
 
 # Considera como duplicadas as linhas com mesmo nome e data de nascimento
