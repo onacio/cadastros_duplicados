@@ -10,10 +10,11 @@ import pandas as pd
 #df = pd.read_csv('dados_unificados.csv', sep=';', encoding='utf8')
 
 # Use essa linha para utilizar o relatório do e_SUS APA diretamente [Cadastros vinculados]
-df = pd.read_csv('acompanhamento-cidadaos-vinculados-2025-09-10-16-00.csv', sep=';', encoding='latin1', skiprows=17)
+df = pd.read_csv('acompanhamento-cidadaos-vinculados_2025-10-20-20-36.csv', sep=';', encoding='latin1', skiprows=17)
 
 # Considera como duplicadas as linhas com mesmo nome e data de nascimento
 duplicados = df[df.duplicated(subset=["Nome", "Data de nascimento"], keep=False)]
 
 # Salvar em um novo arquivo
-duplicados.to_csv("cadastros_duplicados.csv", sep=';', encoding='latin1', index=False)
+#duplicados.to_csv("cadastros_duplicados.csv", sep=';', encoding='latin1', index=False)
+duplicados.to_excel("cadastros_duplicados.xlsx", index=False)
